@@ -1,0 +1,16 @@
+{
+  "name": "Kaleidoscope LLVM",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": "."
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "llvm-vs-code-extensions.vscode-clangd"
+      ]
+    }
+  },
+  "postCreateCommand": "cmake -S . -B build -G Ninja && cmake --build build",
+  "remoteUser": "vscode"
+}
